@@ -57,7 +57,7 @@ If you want to work with translation, or find errors in the translations, [pleas
 	tool > port > your_Port
 	tool > programator > AVRISP mkll
 
-	copy the folder mbotRFID_firmware located in (./mBlock\web\flash-core\firmware\mbot_firmware) into your mbot_firmware folder (you can open it [connect > view source) 
+	copy the folder mbotRFID_firmware located in (./mBlock\src\firmware\mbot_firmware) into your mbot_firmware folder (you can open it [connect > view source) 
 	Then push the file called mbotRFID_firmware.ino located in the folder you just pasted into your mbot (to do that click on the (->) button in the arduino IDE) 
 
 3- Test
