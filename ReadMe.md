@@ -34,3 +34,11 @@ If you want to work with translation, or find errors in the translations, [pleas
 # Translations
 
 If you want to work with translation, or find errors in the translations, [please read this document on how to translate mBlock](http://www.mblock.cc/posts/note-for-translators). This Git repo does not accept pull requests on translating the texts.
+
+
+# How to Use With Mblock Already Installed
+
+remplace your Mbot extension (Extensions > Manage Extensions > Installed >  Mbot > View Source) 
+with this project Mbot extension (./mBlock\web\flash-core\ext\libraries\mbot) 
+
+Push the file called mbotRFID.ino (mBlock\src\firmware\mbot_firmware) into your mbot 

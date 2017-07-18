@@ -11,6 +11,9 @@
 	
 		["w", "%m.direction at speed %d.motorvalue","runBot", "run forward", 0,
 		{"encode":"{d0}{s1}","setup":"","inc":"","def":"","work":"move({0},{1});\n","loop":""}],
+
+		["r", "Last House Number","getRfid",
+		{}],
 		
 		["w", "set motor%d.motorPort speed %d.motorvalue","runMotor", "M1", 0,
 		{"encode":"{d0}{s1}","setup":"","inc":"","def":"","work":"motor_{0}.run(({0})==M1?-({1}):({1}));\n","loop":""}],
@@ -59,7 +62,7 @@
 		{"encode":"{d0}{d1}","setup":"","inc":"","def":"MeShutter shutter_{0}({0});\n","work":"shutter_{0}.setState({1});\n","loop":""}],
 
 		["w", "set mini fan %d.fanPorts blow %d.fan","runFan","Port1", "clockwise",
-		{"encode":"{d0}{d1}","setup":"","inc":"","def":"MePort dc130_{0}({0});\n--separator--void dc130_run( MePort dc130, int8_t direction) \n{\n  pinMode(dc130.pin1(),OUTPUT);\n  pinMode(dc130.pin2(),OUTPUT);\n  if( direction > 0)\n  {\n    digitalWrite(dc130.pin2(),0);\n    digitalWrite(dc130.pin1(),1);\n  }\n  else if( direction < 0)\n  {\n    digitalWrite(dc130.pin1(),0);\n    digitalWrite(dc130.pin2(),1);\n  }\n  else\n  {\n    digitalWrite(dc130.pin1(),0);\n    digitalWrite(dc130.pin2(),0);\n  }\n}\n","work":"dc130_run(dc130_{0},{1});\n","loop":""}],
+		{"encode":"{d0}{d1}","setup":"","inc":"","def":"MePort dc130({0});\n--separator--void dc130_run( uint8_t port, int8_t direction) \n{\n  pinMode(dc130.pin1(),OUTPUT);\n  pinMode(dc130.pin2(),OUTPUT);\n  if( direction > 0)\n  {\n    digitalWrite(dc130.pin2(),0);\n    digitalWrite(dc130.pin1(),1);\n  }\n  else if( direction < 0)\n  {\n    digitalWrite(dc130.pin1(),0);\n    digitalWrite(dc130.pin2(),1);\n  }\n  else\n  {\n    digitalWrite(dc130.pin1(),0);\n    digitalWrite(dc130.pin2(),0);\n  }\n}\n","work":"dc130_run({0},{1});\n","loop":""}],
 		
 		["-"],
 		["R", "light sensor %d.laport","getLightSensor","light sensor on board",
@@ -124,7 +127,7 @@
 		["-"],
 		
 		["R", "timer","getTimer", "0",
-		{"encode":"{n0}","setup":"","inc":"","def":"double currentTime = 0;\ndouble lastTime = 0;\ndouble getLastTime(){\n\treturn currentTime = millis()/1000.0 - lastTime;\n}\n","work":"getLastTime()","loop":""}],
+		{"encode":"{n0}","setup":"","inc":"","def":"double currentTime = 0;\ndouble lastTime = 0;\n--separator--double getLastTime(){\n\treturn currentTime = millis()/1000.0 - lastTime;\n}\n","work":"getLastTime()","loop":""}],
 		
 		["w", "reset timer","resetTimer", "0",
 		{"encode":"{n0}","setup":"","inc":"","def":"double currentTime = 0;\ndouble lastTime = 0;\n","work":"lastTime = millis()/1000.0;\n","loop":""}]
@@ -133,6 +136,7 @@
 	"menus": {
 		"yellowPorts":["Port1","Port2","Port3","Port4"],
     	"bluePorts":["Port1","Port2","Port3","Port4"],
+    	"house":["A","B","C","D"],
     	"grayPorts":[],
     	"whitePorts":["Port1","Port2","Port3","Port4"],
     	"blackPorts":["Port3","Port4"],
