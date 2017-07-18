@@ -38,7 +38,26 @@ If you want to work with translation, or find errors in the translations, [pleas
 
 # How to Use With Mblock Already Installed
 
-remplace your Mbot extension (Extensions > Manage Extensions > Installed >  Mbot > View Source) 
-with this project Mbot extension (./mBlock\web\flash-core\ext\libraries\mbot) 
+1-remplace your Mbot extension
 
-Push the file called mbotRFID.ino (mBlock\src\firmware\mbot_firmware) into your mbot 
+	the mBot exstension is normaly located at "C:\Users\YourUserProfile\AppData\Roaming\com.makeblock.Scratch3.4.10\Local Store\mBlock\libraries" 
+	it can also be located with makeblock : (Extensions > Manage Extensions > Installed >  Mbot > View Source) 
+	
+	one you get the mBot folder remplace it with the mBot extension present in this project,
+	wich can be located at ./mBlock\web\flash-core\ext\libraries\mbot 
+
+2-Push the good program in your mBot
+	
+	connect your mbot to your computer
+	turn ON your mBot 
+	open arduino(to do that, you can open mBLock in admin mode, go to arduino mode [edit > Arduino mode], and click on "Edit with Arduino IDE")
+
+	Push the file called mbotRFID.ino located at (./mBlock\src\firmware\mbot_firmware) into your mbot (to do that click on the (->) button in the arduino IDE) 
+
+3-test
+
+	relaunch Mblock
+	activate the extension if it's not already done(Extension> MakeBlock)
+	connect the mBot to Mblock(Connect > Serial Port > yourPort)
+
+	you are ready to go.
