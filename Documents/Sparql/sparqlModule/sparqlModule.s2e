@@ -1,0 +1,28 @@
+{	
+	"extensionName": "Sparql Module",
+	"description": "a module for Sparql request",
+	"version": "1.0",
+	"author": "Joe DE OLIVEIRA",
+	"homepage": "",
+	"sort":0,
+	"javascriptURL":"js/sparqlModule.js",
+  	"firmware":"1.0",
+  	"extensionPort":0,
+	"blockSpecs": [
+            ["r", "get element %n %n ", "tab","0","0"{}],
+            ["r", "size ", "size",{}],
+            ["r", "size ", "size",{}],
+            ["r", "Names of collums ", "colName",{}],
+            ["r", "number of collums ", "colName",{}],
+            ["w", "process request %m.request ", "request","list of dog breed",{}],
+            ["w", "process request %m.request  %m.request", "request","Select","SOYELLIBRE",{}],
+	],
+	"menus": {
+		"request":["nom de chats","nom des gens de genre inconnu","liste des pokemon"]
+	},
+	"values":{
+	},
+	"translators":{
+	}
+	}
+}
