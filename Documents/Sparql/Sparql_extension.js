@@ -24,8 +24,8 @@ new (function() {
     var arr=[];
     var array =[];
     var actualQuery=0;
-
-    testQuery(actualQuery);
+// testQuery(actualQuery);
+   
 
 
 
@@ -106,7 +106,7 @@ new (function() {
     	testQuery(actualQuery);
     	console.log("Rdone");
 		callback();
-	}
+	}   
 
 	/*TODO syteme general de get (dans test query)*/
     ext.tab = function(x,y) {
@@ -131,9 +131,9 @@ new (function() {
         blocks: [
             ["r", "get tab %n %n ", "tab",0],
             ["w", "test ", "test"],
-            ["r", "size ", "size"],
             ["r", "Number of columns ", "colNum"],
             ["w", "process request %m.request ", "request",collN[0]],
+            ["r", "size ", "size"],
 
         ],
         menus: {
